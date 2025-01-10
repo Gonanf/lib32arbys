@@ -1,0 +1,3 @@
+/home/chaos/proyectos/angora_turco/lib32arbys/build/debug/CMakeFiles/libarbys.dir
+/home/chaos/proyectos/angora_turco/lib32arbys/build/debug/CMakeFiles/edit_cache.dir
+/home/chaos/proyectos/angora_turco/lib32arbys/build/debug/CMakeFiles/rebuild_cache.dir
