@@ -38,4 +38,8 @@ CMakeFiles/libarbys.dir/libarbys/tests/test.cpp.o: \
  /usr/include/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/bits/stdlib-float.h /usr/include/c++/14.2.1/bits/std_abs.h \
  /home/chaos/proyectos/angora_turco/lib32arbys/libarbys/tests/../libarbys.hpp \
- /home/chaos/proyectos/angora_turco/lib32arbys/libarbys/tests/.././libarbys.cpp
+ /home/chaos/proyectos/angora_turco/lib32arbys/libarbys/tests/.././libarbys.cpp \
+ /home/chaos/proyectos/angora_turco/lib32arbys/libarbys/tests/.././modules/promise.hpp \
+ /home/chaos/proyectos/angora_turco/lib32arbys/libarbys/tests/.././modules/../libarbys.hpp \
+ /home/chaos/proyectos/angora_turco/lib32arbys/libarbys/tests/.././modules/vector.hpp \
+ /home/chaos/proyectos/angora_turco/lib32arbys/libarbys/tests/.././modules/string.hpp

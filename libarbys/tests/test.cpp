@@ -14,7 +14,7 @@ int main(){
     buffer.new_from((char*)"amongas",8);
     for (int i = 0; i < 10; i++)
     {
-                process_command(buffer);
+                buffer.split();
     }
 
     return 0;

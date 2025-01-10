@@ -5,6 +5,10 @@ CMakeFiles/libarbys.dir/libarbys/tests/test.cpp.o
  /home/chaos/proyectos/angora_turco/lib32arbys/libarbys/tests/test.cpp
  /home/chaos/proyectos/angora_turco/lib32arbys/libarbys/libarbys.cpp
  /home/chaos/proyectos/angora_turco/lib32arbys/libarbys/libarbys.hpp
+ /home/chaos/proyectos/angora_turco/lib32arbys/libarbys/modules/promise.hpp
+ /home/chaos/proyectos/angora_turco/lib32arbys/libarbys/modules/string.hpp
+ /home/chaos/proyectos/angora_turco/lib32arbys/libarbys/modules/vector.hpp
+ /home/chaos/proyectos/angora_turco/lib32arbys/libarbys/libarbys.hpp
  /usr/include/alloca.h
  /usr/include/bits/atomic_wide_counter.h
  /usr/include/bits/byteswap.h
