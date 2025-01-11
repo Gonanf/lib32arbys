@@ -10,12 +10,24 @@ using namespace std;
 #include "../libarbys.hpp"
 
 int main(){
-    string_L buffer;
-    buffer.new_from((char*)"amongas",8);
-    for (int i = 0; i < 10; i++)
-    {
-                buffer.split();
+    string_L buffer = string_L::new_from((char*)"amongas es god",15);
+    vector_L<string_L> args = buffer.split();
+    for(int i = 0; i < args.size; i++){
+        args[i].print();
     }
+    printf("\n\n");
+    args.sort();
+    for(int i = 0; i < args.size; i++){
+        args[i].print();
+    }
+    printf("\n\n");
+
+    args.sort(true);
+    for(int i = 0; i < args.size; i++){
+        args[i].print();
+    }
+    printf("\n\n");
+
 
     return 0;
 }

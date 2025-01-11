@@ -13,6 +13,7 @@ using namespace std;
 #endif
 
 #include "./libarbys.cpp"
+#include "./modules/sorts.hpp"
 #include "./modules/promise.hpp"
 #include "./modules/vector.hpp"
 #include "./modules/string.hpp"

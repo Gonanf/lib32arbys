@@ -1,1 +1,0 @@
-/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/libarbys.dir/link.d CMakeFiles/libarbys.dir/libarbys/tests/test.cpp.o -o libarbys

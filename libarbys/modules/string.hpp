@@ -3,12 +3,14 @@
 class string_L : public vector_L<char>
 {
 public:
-    string_L new_from(char *array, int size, int allocated = 0)
+    static string_L new_from(char *array, int size)
     {
-        this->value = array;
-        this->size = size;
-        this->allocated = allocated == 0 ? size : allocated;
-        return *this;
+        string_L new_l;
+        new_l.value = array;
+        new_l.size = size;
+        new_l.allocated = size+1;
+
+        return new_l;
     }
 
     string_L print()
@@ -35,21 +37,21 @@ public:
         {
             copy[i] = this->value[i];
         }
-        return string_L::new_from(copy, this->size, this->allocated);
+        return string_L::new_from(copy, this->size);
     }
 
     string_L &push(char value_new) override
     {
         if (this->size + 2 <= this->allocated)
         {
-            printf("Found space %d/%d\n", size, allocated);
+            //printf("Found space %d/%d\n", size, allocated);
 
             this->value[size] = value_new;
             this->value[size + 1] = '\0';
             this->size++;
             return *this;
         }
-        printf("NOT Found space %d/%d (New: %d)\n", size, allocated, allocated * 2);
+        //printf("NOT Found space %d/%d (New: %d)\n", size, allocated, allocated * 2);
 
         char *new_T = allocate_D(this->allocated * 2);
         for (int i = 0; i < this->size; i++)
@@ -98,20 +100,19 @@ public:
     {
         vector_L<string_L> arguments;
         string_L internal_buffer;
-        internal_buffer.allocate(32);
+        //internal_buffer.allocate(32);
         printf("==== New Command ====\n");
         for (int i = 0; i < this->size; i++)
         {
             if ((this->value[i] == ' ' || this->value[i] == '\n') && !internal_buffer.is_empty())
             {
                 printf("Found space %d\n", i);
-                printf("Size: %d allocated: %d\n", internal_buffer.size, internal_buffer.allocated);
-                internal_buffer.print();
-                string_L temp = internal_buffer.copy();
-                printf("Temp Size: %d allocated: %d\n", temp.size, temp.allocated);
-                arguments.push(temp);
-                printf("pushed");
+                printf("Size: %d allocated: %d\n\n", internal_buffer.size, internal_buffer.allocated);
+                arguments.push(internal_buffer.copy());
+                arguments[arguments.size-1].print();
                 internal_buffer.empty();
+                arguments[arguments.size-1].print();
+
             }
             else
             {
@@ -135,6 +136,7 @@ public:
         for (int i = 0; i < arguments.size; i++)
         {
             arguments[i].print();
+            printf("SIZE: %d, ALLOCATED: %d\n\n",arguments[i].size,arguments[i].allocated);
         }
 
         printf("==== Command End ====\n");
