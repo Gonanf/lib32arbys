@@ -109,10 +109,7 @@ public:
                 printf("Found space %d\n", i);
                 printf("Size: %d allocated: %d\n\n", internal_buffer.size, internal_buffer.allocated);
                 arguments.push(internal_buffer.copy());
-                arguments[arguments.size-1].print();
                 internal_buffer.empty();
-                arguments[arguments.size-1].print();
-
             }
             else
             {
