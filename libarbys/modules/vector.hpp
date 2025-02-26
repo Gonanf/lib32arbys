@@ -11,11 +11,6 @@ protected:
     T *allocate_D(int size)
     {
         T *value = new T[size];
-        if (!value)
-        {
-            panic("Out of memory for vector");
-        }
-        printf("Allocated %d objects\n", size);
         return value;
     }
 
@@ -117,12 +112,10 @@ public:
     {
         if (this->size + 1 <= allocated)
         {
-            printf("Found space %d/%d\n",size,allocated);
             this->value[size] = value_new;
             this->size++;
             return *this;
         }
-        printf("Not Found space %d/%d (New: %d)\n",size,allocated,allocated*2);
         T *new_T = allocate_D(this->allocated * 2);
         for (int i = 0; i < this->size; i++)
         {
@@ -149,7 +142,7 @@ public:
     {
         if (index >= this->size)
         {
-            panic("Index out of bounds, (index: %d >= size: %d)\n", &index, &this->size);
+            //panic("Index out of bounds, (index: %d >= size: %d)\n", &index, &this->size);
         }
         return this->value[index];
     }

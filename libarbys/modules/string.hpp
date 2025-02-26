@@ -1,3 +1,6 @@
+
+#ifndef LIBARBYS_STRING
+#define LIBARBYS_STRING
 #include "../libarbys.hpp"
 
 class string_L : public vector_L<char>
@@ -17,9 +20,9 @@ public:
     {
         for (int i = 0; i < this->size; i++)
         {
-            printf("%c", this->value[i]);
+            //printf("%c", this->value[i]);
         }
-        printf("\n");
+        //printf("\n");
         return *this;
     }
 
@@ -77,13 +80,10 @@ public:
         int c = getchar_timeout_us(0);
         if (c != PICO_ERROR_TIMEOUT)
         {
-            printf("character: %c, size:%d\n", c, this->size);
             if ((char)c == '\n')
             {
                 this->push('\n');
-                printf("GETTING COMMAND\n");
                 this->print();
-                printf("\n");
                 // process_command(buffer);
                 f.is_done = true;
                 f.value = (char)c;
@@ -101,19 +101,15 @@ public:
         vector_L<string_L> arguments;
         string_L internal_buffer;
         //internal_buffer.allocate(32);
-        printf("==== New Command ====\n");
         for (int i = 0; i < this->size; i++)
         {
             if ((this->value[i] == ' ' || this->value[i] == '\n') && !internal_buffer.is_empty())
             {
-                printf("Found space %d\n", i);
-                printf("Size: %d allocated: %d\n\n", internal_buffer.size, internal_buffer.allocated);
                 arguments.push(internal_buffer.copy());
                 internal_buffer.empty();
             }
             else
             {
-                printf("Found char %c at %d\n", this->value[i], i);
                 internal_buffer.push(this->value[i]);
             }
         }
@@ -121,22 +117,18 @@ public:
         if (!internal_buffer.is_empty())
         {
 
-            printf("Pushing final argument\n");
             arguments.push(internal_buffer);
         }
         else
         {
-            printf("clearing\n");
             internal_buffer.clear();
         }
-        printf("counting %d\n", arguments.size);
         for (int i = 0; i < arguments.size; i++)
         {
             arguments[i].print();
-            printf("SIZE: %d, ALLOCATED: %d\n\n",arguments[i].size,arguments[i].allocated);
         }
 
-        printf("==== Command End ====\n");
         return arguments;
     }
 };
+#endif

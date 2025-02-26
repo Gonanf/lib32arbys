@@ -1,0 +1,3 @@
+[] Implement mutex (Mutual Exclution Semaphore)
+[] Add The Result and Option patterns
+[] Remove all the Pico sdk includes, and replace the Panic with own implementation
